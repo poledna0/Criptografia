@@ -65,11 +65,16 @@ def salvar_imagem(b: bytes, caminho: str) -> None:
 
 def main():
     chave = input("chave: ")
+    imagem = carrega_imagem('pou_oliginal.jpg')
+    imagem_cript = encrypt(imagem,chave)
+    salvar_encriptado(imagem_cript,'popo')
+    img = carregar_encriptado('popo')
+    v = decrypt(img, chave)
+    salvar_imagem(v,'popo.jpg')
 
     # Carregue a imagem original usando a função carrega_imagem
     # Encripte a imagem original usando a função encrypt
     # Salve a imagem encriptada usando salvar_encriptado
-
     # Carregue a imagem encriptada usando a função carregar_encriptado
     # Decripte a imagem encriptada usando a função decrypt
     # Salve a imagem decriptada usando a função salvar_imagem
